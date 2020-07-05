@@ -20,4 +20,16 @@ def location(input):
 def weather(woeid):
     return requests.get(API_URL + API_WEATHER + str(woeid)).json()
 
+def forecast_printout(weather):
+    print(f"The weather for {weather['title']}:")
+    for entries in weather['consolidated_weather']:
+        date = entry['applicable_date']
+        high = entry['max_temp']
+        low = entry['min_temp']
+        state = entry['weather_state_name']
+        print(f"On {date},it will have {state}, with highs of {high}°C and lows
+                of {low}°C.")
 
+if __name__ == '__main__':
+    while True:
+        get_forecast()
