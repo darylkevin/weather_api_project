@@ -23,12 +23,18 @@ def weather(woeid):
 def forecast_printout(weather):
     print(f"The weather for {weather['title']}:")
     for entries in weather['consolidated_weather']:
-        date = entry['applicable_date']
-        high = entry['max_temp']
-        low = entry['min_temp']
-        state = entry['weather_state_name']
-        print(f"On {date},it will have {state}, with highs of {high}°C and lows
-                of {low}°C.")
+        date = entries['applicable_date']
+        high = entries['max_temp']
+        low = entries['min_temp']
+        state = entries['weather_state_name']
+        print(f"On {date},it will have {state}, with highs of {high}°C and"
+              f"lows of {low}°C.")
+
+def get_forecast():
+    which_place = input('Which place would you like to know the weather of? \n')
+    this_place = location(which_place)
+    woeid = this_place[0]['woeid']
+    forecast_printout(weather(woeid))
 
 if __name__ == '__main__':
     while True:
