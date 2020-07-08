@@ -31,10 +31,13 @@ def forecast_printout(weather):
               f"lows of {low}°C.")
 
 def get_forecast():
-    which_place = input('Which place would you like to know the weather of? \n')
-    this_place = location(which_place)
-    woeid = this_place[0]['woeid']
-    forecast_printout(weather(woeid))
+    try:
+        which_place = input('Which place would you like to know the weather of? \n')
+        this_place = location(which_place)
+        woeid = this_place[0]['woeid']
+        forecast_printout(weather(woeid))
+    except requests.exceptions.ConnectionError:
+        print("Please check your connection status. Cannot connect to server.")
 
 if __name__ == '__main__':
     while True:
