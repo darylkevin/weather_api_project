@@ -21,8 +21,23 @@ Once the WOEID is obtained, the program then takes the WOEID and queries the web
 This project is built mainly using Python. A basic understanding of public web APIs were also beneficial in developing this project.
 
 ## How can I use this?
+
+You need to clone the repository in your computer first by typing this command in your termianl (*Nix-like OSes):
+```
+https://github.com/darylkevin/weather_api_project
+```
+Go into the cloned repo's directory:
+```
+cd weather_api_project
+```
+Run the .py file
+```
+python3 weather_info.py
+```
+Follow the prompt of the program
  
 
 ## Road map for this project
 
 The project is only giving output only on the terminal. I plan to make a frontend interface where a user without knowledge of the terminal can still use the program easily.
+
